@@ -1,3 +1,4 @@
+
 // Motor parameters
 
 // left motor
@@ -22,10 +23,15 @@ int error = 0;
 float P = 0, I = 0, D = 0, PID = 0;
 float prevErr = 0; // Previous error
 float prevI = 0;   // Previous integral
+
+// if your bot oscillate too much then we need to decrease kp value
+// after that if it response slowly then we need to increase it until i get better result
 float kp = 22, kd = 38, ki = 1.7; // Tune it
 
-int flag = 0, tlag = 0;
+//  If your robot overshoots the desired path, you may need to increase kd. If it responds too slowly to changes, you might need to decrease it
 
+int flag = 0, tlag = 0;
+ 
 int middleValue = 300;
 int sensorVal[8]; // Change the array size to match the number of sensors
 int sum = 0, searchFlag = 0, sumTemp = 12;
